@@ -12,7 +12,7 @@ It works in two steps, flatten and sort.
 --sort
     Will go through all files in your main directory and gather those files fitting the pattern SxxExx and any files with numerical pattern. It then makes folder names out of these files, and moves every file to its proper folder.
 
-Example of typical usecase:
+Example of a typical usecase:
 
     python folderize.py --flatten
     python folderize.py --sort
