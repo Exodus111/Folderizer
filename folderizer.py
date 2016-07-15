@@ -21,7 +21,7 @@ Videofiles = ["*.mkv", "*.mp4", "*.avi"]
 
 
 def _find_pattern(names, pattern):
-    #This function finds the correct files or folders following the SxxExx pattern.
+    """This function finds the correct files or folders following the SxxExx pattern."""
     checked = {}
     for i in names:
         num = re.search(pattern, i.name)
@@ -30,7 +30,7 @@ def _find_pattern(names, pattern):
     return checked
 
 def flatten(root, folder_pattern, file_pattern):
-    #Here we empty and delete all relevant folders.
+    """Here we empty and delete all relevant folders."""
     folders = _find_pattern(root.dirs(), folder_pattern)
     for folder in folders:
         for p in file_pattern:
@@ -39,7 +39,7 @@ def flatten(root, folder_pattern, file_pattern):
         folder.rmtree_p()
 
 def sort(root, pattern):
-    #Here we make our new folders and move all files from root to where they belong.
+    """Here we make our new folders and move all files from root to where they belong."""
     checkedfiles = _find_pattern(root.files(), pattern)
     for file in checkedfiles:
         filename = str(file.basename())
